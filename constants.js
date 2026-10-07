@@ -47,8 +47,8 @@ export const HERO = {
   firstName: "Nicolás",
   lastName: "Villarroel",
   typed: {
-    en: ["Biomedical Engineer · AI for Medical Imaging"],
-    es: ["Ingeniero Biomédico · IA en Imágenes Médicas"],
+    en: ["Biomedical Engineer · AI for Medical Imaging", "Full-Stack Developer · PHP · JavaScript · Python"],
+    es: ["Ingeniero Biomédico · IA en Imágenes Médicas", "Desarrollador Full-Stack · PHP · JavaScript · Python"],
   },
   lede: {
     en: "I build deep learning models and clinical software for mammography, from reading DICOM files and training detection models to the web tools that put the results in front of physicians.",
@@ -57,15 +57,15 @@ export const HERO = {
   viewProjects: { en: "View projects", es: "Ver proyectos" },
 };
 
-// Big scroll-highlighted quote after the hero ("Why two accuracies?" note).
+// Big scroll-highlighted quote after the hero (from the CV profile).
 export const ABOUT = {
   line1: {
-    en: "The first number was inflated because images of the same patient ended up in both train and test. ",
-    es: "El primer número estaba inflado porque imágenes del mismo paciente quedaron en train y en test. ",
+    en: "Biomedical Engineer with 3+ years of hands-on experience installing, maintaining and supporting high-technology medical equipment. ",
+    es: "Ingeniero Biomédico con más de 3 años de experiencia práctica en la instalación, el mantenimiento y el soporte técnico de equipos médicos de alta tecnología. ",
   },
   line2: {
-    en: "The patient-level number is the honest estimate of generalization, and it's the one I'd trust.",
-    es: "El número a nivel paciente es la estimación honesta de generalización, y es en el que confío.",
+    en: "I complement clinical engineering with software development and applied machine learning for medical imaging.",
+    es: "Complemento la ingeniería clínica con desarrollo de software y machine learning aplicado a imágenes médicas.",
   },
 };
 
@@ -141,7 +141,7 @@ export const DETAIL_TABS = [
     value: "hybrid",
     title: "Hybrid CAD",
     url: LINKS.hybridRepo,
-    tags: ["TensorFlow/Keras", "InceptionV3", "YOLOv8", "CBIS-DDSM", "transfer learning"],
+    tags: ["Python", "TensorFlow/Keras", "PyTorch", "InceptionV3", "YOLOv8", "NumPy", "pandas", "CBIS-DDSM", "Mini-DDSM", "transfer learning"],
     items: [
       {
         title: "Hybrid CAD for Mammographic Lesions",
@@ -202,7 +202,7 @@ export const DETAIL_TABS = [
     value: "web",
     title: "MammoCAD Web",
     url: LINKS.webRepo,
-    tags: ["Python", "pydicom", "OpenCV", "PHP", "MySQL", "Cornerstone.js", "pytest"],
+    tags: ["Python", "pydicom", "OpenCV", "PHP", "MySQL", "JavaScript", "Bootstrap", "HTML", "CSS", "Cornerstone.js", "pytest"],
     items: [
       {
         title: "MammoCAD Web: DICOM Viewer + AI",
@@ -276,30 +276,68 @@ export const SKILLS_INTRO = {
   title: { en: "Toolbox", es: "Herramientas" },
 };
 
-// Logos shown above the toolbox text (ids match /public/skills/*.svg).
+// Logos shown above the toolbox text, in groups (ids match /public/skills/*.svg).
 export const SKILL_ICONS = [
-  { id: "python", label: "Python" },
-  { id: "tensorflow", label: "TensorFlow" },
-  { id: "keras", label: "Keras" },
-  { id: "pytorch", label: "PyTorch" },
-  { id: "ultralytics", label: "YOLOv8" },
-  { id: "scikitlearn", label: "scikit-learn" },
-  { id: "opencv", label: "OpenCV" },
-  { id: "php", label: "PHP" },
-  { id: "mysql", label: "MySQL" },
-  { id: "javascript", label: "JavaScript" },
-  { id: "pytest", label: "pytest" },
+  {
+    title: { en: "AI and medical imaging", es: "IA e imágenes médicas" },
+    icons: [
+      { id: "python", label: "Python" },
+      { id: "tensorflow", label: "TensorFlow" },
+      { id: "keras", label: "Keras" },
+      { id: "pytorch", label: "PyTorch" },
+      { id: "ultralytics", label: "YOLOv8" },
+      { id: "scikitlearn", label: "scikit-learn" },
+      { id: "opencv", label: "OpenCV" },
+      { id: "numpy", label: "NumPy" },
+      { id: "pandas", label: "pandas" },
+    ],
+  },
+  {
+    title: { en: "Full-stack development", es: "Desarrollo full-stack" },
+    icons: [
+      { id: "php", label: "PHP" },
+      { id: "javascript", label: "JavaScript" },
+      { id: "html5", label: "HTML" },
+      { id: "css", label: "CSS" },
+      { id: "bootstrap", label: "Bootstrap" },
+      { id: "jquery", label: "jQuery" },
+      { id: "java", label: "Java" },
+    ],
+  },
+  {
+    title: { en: "Databases and tools", es: "Bases de datos y herramientas" },
+    icons: [
+      { id: "mysql", label: "MySQL" },
+      { id: "postgresql", label: "PostgreSQL" },
+      { id: "pytest", label: "pytest" },
+      { id: "git", label: "Git" },
+    ],
+  },
 ];
 
 // Original toolbox text, word for word.
 export const TOOLBOX = [
   {
     title: "Deep learning",
-    text: "TensorFlow/Keras, PyTorch, Ultralytics YOLOv8, scikit-learn, transfer learning, segmentation (U-Net++, DeepLabv3+, Swin-UNet)",
+    text: "TensorFlow/Keras, PyTorch, Ultralytics YOLOv8, scikit-learn, NumPy, pandas, transfer learning, segmentation (U-Net++, DeepLabv3+, Swin-UNet)",
   },
   {
     title: { en: "Medical imaging", es: "Imágenes médicas" },
-    text: "DICOM, pydicom, OpenCV, Cornerstone.js, CBIS-DDSM, INbreast",
+    text: "DICOM, pydicom, OpenCV, Pillow, Cornerstone.js, CBIS-DDSM, Mini-DDSM, INbreast",
+  },
+  {
+    title: { en: "Full-stack development", es: "Desarrollo full-stack" },
+    text: {
+      en: "PHP (PDO, sessions, bcrypt), JavaScript, jQuery/AJAX, HTML, CSS, Bootstrap, Java; Python models served to the web app as JSON",
+      es: "PHP (PDO, sesiones, bcrypt), JavaScript, jQuery/AJAX, HTML, CSS, Bootstrap, Java; modelos en Python integrados a la web mediante JSON",
+    },
+  },
+  {
+    title: { en: "Databases and tools", es: "Bases de datos y herramientas" },
+    text: {
+      en: "MySQL/MariaDB, PostgreSQL, SQL schema design, pytest, Git/GitHub, Conda, XAMPP",
+      es: "MySQL/MariaDB, PostgreSQL, diseño de esquemas SQL, pytest, Git/GitHub, Conda, XAMPP",
+    },
   },
   {
     title: { en: "Evaluation", es: "Evaluación" },
@@ -311,20 +349,20 @@ export const TOOLBOX = [
   {
     title: { en: "Biomedical engineering", es: "Ingeniería biomédica" },
     text: {
-      en: "Medical devices, hospital infrastructure, clinical workflows",
-      es: "Equipos médicos, infraestructura hospitalaria, flujos clínicos",
+      en: "Medical devices, hospital infrastructure, clinical workflows; maintenance of anesthesia machines, ventilators, CT scanners, ultrasound and endoscopy towers (Dräger, Philips, Olympus, Bayer, Sirona)",
+      es: "Equipos médicos, infraestructura hospitalaria, flujos clínicos; mantenimiento de máquinas de anestesia, ventiladores, tomógrafos, ecógrafos y torres de endoscopía (Dräger, Philips, Olympus, Bayer, Sirona)",
     },
   },
 ];
 
 export const COLLABORATION = {
-  topMarquee: " Deep Learning  Medical Imaging  Computer-Aided Detection ",
-  bottomMarquee: " Biomedical Engineering  DICOM  Segmentation  Clinical Software ",
+  topMarquee: " Deep Learning  Medical Imaging  Computer-Aided Detection  Full-Stack Development ",
+  bottomMarquee: " Biomedical Engineering  DICOM  PHP  JavaScript  Python  SQL ",
   before: { en: "Open to", es: "Abierto a" },
   strong: { en: "remote roles", es: "roles remotos" },
   after: {
-    en: "in machine learning for healthcare and medical imaging.",
-    es: "en machine learning para salud e imágenes médicas.",
+    en: "in machine learning for healthcare and medical imaging, and as a full-stack developer.",
+    es: "en machine learning para salud e imágenes médicas, y como desarrollador full-stack.",
   },
 };
 
@@ -332,8 +370,8 @@ export const CONTACT = {
   label: { en: "CONTACT", es: "CONTACTO" },
   title: { en: "Contact", es: "Contacto" },
   subtitle: {
-    en: "Open to remote roles in machine learning for healthcare and medical imaging.",
-    es: "Abierto a roles remotos en machine learning para salud e imágenes médicas.",
+    en: "Open to remote roles in machine learning for healthcare and medical imaging, and to full-stack developer positions.",
+    es: "Abierto a roles remotos en machine learning para salud e imágenes médicas, y a puestos de desarrollador full-stack.",
   },
   email: LINKS.email,
   name: { en: "Name", es: "Nombre" },

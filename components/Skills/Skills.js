@@ -57,14 +57,23 @@ const Skills = () => {
             </h2>
           </div>
 
-          <div className="flex flex-wrap gap-6 mt-10 staggered-reveal max-w-4xl">
-            {SKILL_ICONS.map(({ id, label }) => (
-              <figure key={id} className="flex flex-col items-center gap-2 w-16">
-                <img src={`/skills/${id}.svg`} alt={label} width={44} height={44} className="w-11 h-11" />
-                <figcaption className="text-xs font-mono text-gray-light-4 text-center whitespace-nowrap">
-                  {label}
-                </figcaption>
-              </figure>
+          <div className="flex flex-wrap gap-x-14 gap-y-10 mt-10 max-w-5xl">
+            {SKILL_ICONS.map((group) => (
+              <div key={group.title.en} className="staggered-reveal">
+                <h3 className="uppercase tracking-widest text-gray-light-2 font-medium text-sm mb-4">
+                  {t(group.title)}
+                </h3>
+                <div className="flex flex-wrap gap-5">
+                  {group.icons.map(({ id, label }) => (
+                    <figure key={id} className="flex flex-col items-center gap-2 w-16">
+                      <img src={`/skills/${id}.svg`} alt={label} width={40} height={40} className="w-10 h-10" />
+                      <figcaption className="text-xs font-mono text-gray-light-4 text-center whitespace-nowrap">
+                        {label}
+                      </figcaption>
+                    </figure>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
 
