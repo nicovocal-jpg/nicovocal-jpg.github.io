@@ -1,4 +1,5 @@
 import Meteors from "../Meteors/Meteors";
+import Chase from "../Chase/Chase";
 import styles from "./FooterBg.module.scss";
 
 const FooterBg = () => {
@@ -6,8 +7,7 @@ const FooterBg = () => {
     <div className={styles.top}>
       <Meteors />
       <div className={styles.background}>
-        <div className={styles.background__one} />
-        <div className={styles.background__two} />
+        <Chase />
       </div>
     </div>
   );

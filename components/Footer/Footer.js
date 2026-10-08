@@ -24,7 +24,7 @@ const Footer = () => {
     <footer
       className="w-full relative select-none bg-cover"
       style={{
-        backgroundImage: `linear-gradient(to right, ${theme.colors.indigo.light}, ${theme.colors.indigo.dark})`,
+        backgroundImage: `linear-gradient(to bottom, ${theme.colors.gray.dark[5]} 0%, ${theme.colors.gray.dark[3]} 45%, #1f2a36 75%, #2c3846 100%)`,
       }}
     >
       <FooterBg />

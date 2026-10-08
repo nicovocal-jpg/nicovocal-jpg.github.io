@@ -1,0 +1,160 @@
+.chase {
+  position: absolute;
+  bottom: 30px;
+  left: -25%;
+  width: 230px;
+  height: 110px;
+  animation: chase-across 26s linear infinite;
+  pointer-events: none;
+}
+
+.runner {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 88px;
+  height: auto;
+  overflow: visible;
+}
+
+.robot {
+  position: absolute;
+  right: 0;
+  bottom: 30px;
+  width: 70px;
+  height: auto;
+  overflow: visible;
+  animation: robot-float 1.6s ease-in-out infinite;
+}
+
+.bob {
+  animation: runner-bob 0.25s ease-in-out infinite alternate;
+}
+
+.limb {
+  transform-box: view-box;
+}
+
+.legBack,
+.legFront {
+  transform-origin: 49.5px 75px;
+}
+
+.armBack,
+.armFront {
+  transform-origin: 51px 51px;
+}
+
+.legFront,
+.armBack {
+  animation: swing-a 0.5s ease-in-out infinite alternate;
+}
+
+.legBack,
+.armFront {
+  animation: swing-b 0.5s ease-in-out infinite alternate;
+}
+
+.eyes {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: robot-blink 3.2s infinite;
+}
+
+.antenna {
+  animation: antenna-pulse 1.2s ease-in-out infinite alternate;
+}
+
+.trail {
+  animation: trail-flicker 0.4s linear infinite alternate;
+}
+
+@keyframes chase-across {
+  0% {
+    left: -25%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes swing-a {
+  from {
+    transform: rotate(-38deg);
+  }
+  to {
+    transform: rotate(38deg);
+  }
+}
+
+@keyframes swing-b {
+  from {
+    transform: rotate(38deg);
+  }
+  to {
+    transform: rotate(-38deg);
+  }
+}
+
+@keyframes runner-bob {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes robot-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(4deg);
+  }
+}
+
+@keyframes robot-blink {
+  0%,
+  92%,
+  100% {
+    transform: scaleY(1);
+  }
+  95% {
+    transform: scaleY(0.1);
+  }
+}
+
+@keyframes antenna-pulse {
+  from {
+    opacity: 0.6;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes trail-flicker {
+  from {
+    opacity: 0.35;
+  }
+  to {
+    opacity: 0.85;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chase {
+    animation: none;
+    left: 40%;
+  }
+  .bob,
+  .limb,
+  .robot,
+  .eyes,
+  .antenna,
+  .trail {
+    animation: none;
+  }
+}

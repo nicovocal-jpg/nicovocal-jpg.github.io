@@ -6,6 +6,7 @@ import Header from "@/components/Header/Header";
 import Menu from "@/components/Header/Menu/Menu";
 import ProgressIndicator from "@/components/ProgressIndicator/ProgressIndicator";
 import Cursor from "@/components/Cursor/Cursor";
+import GridBackground from "@/components/GridBackground/GridBackground";
 import Hero from "@/components/Hero/Hero";
 import About1 from "@/components/About/About1";
 import Skills from "@/components/Skills/Skills";
@@ -54,6 +55,7 @@ export default function Home() {
           </Header>
           <ProgressIndicator />
           <Cursor isDesktop={isDesktop} />
+          <GridBackground />
           <main className="flex flex-col">
             <div
               role="img"
